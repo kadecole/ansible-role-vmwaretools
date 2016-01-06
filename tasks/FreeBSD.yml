@@ -3,3 +3,10 @@
 
 - name: Installing Open VMware Tools (open-vm-tools) for FreeBSD.
   pkgng: name=open-vm-tools-nox11 state=present
+
+- name: Enable services in rc.conf
+  service: name=vmware_guest_vmblock enabled=yes
+  service: name=vmware_guest_vmhgfs enabled=yes
+  service: name=vmware_guest_vmmemctl enabled=yes
+  service: name=vmware_guest_vmxnet enabled=yes
+  service: name=vmware_guestd enabled=yes
