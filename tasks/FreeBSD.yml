@@ -4,9 +4,17 @@
 - name: Installing Open VMware Tools (open-vm-tools) for FreeBSD.
   pkgng: name=open-vm-tools-nox11 state=present
 
-- name: Enable services in rc.conf
+- name: Enable vmware_guest_vmmemctl_enable in rc.conf
   command: sysrc vmware_guest_vmmemctl_enable+=YES
+
+- name: Enable vmware_guest_vmblock_enable in rc.conf
   command: sysrc vmware_guest_vmblock_enable+=YES
+
+- name: Enable vmware_guest_vmxnet_enable in rc.conf
   command: sysrc vmware_guest_vmxnet_enable+=YES
+
+- name: Enable vmware_guest_vmhgfs_enable in rc.conf
   command: sysrc vmware_guest_vmhgfs_enable+=YES
+
+- name: Enable vmware_guestd_enable in rc.conf
   command: sysrc vmware_guestd_enable+=YES
