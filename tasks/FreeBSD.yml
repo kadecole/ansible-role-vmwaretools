@@ -5,8 +5,8 @@
   pkgng: name=open-vm-tools-nox11 state=present
 
 - name: Enable services in rc.conf
-  service: name=vmware_guest_vmblock enabled=yes
-  service: name=vmware_guest_vmhgfs enabled=yes
-  service: name=vmware_guest_vmmemctl enabled=yes
-  service: name=vmware_guest_vmxnet enabled=yes
-  service: name=vmware_guestd enabled=yes
+  command: sysrc vmware_guest_vmmemctl_enable+=YES
+  command: sysrc vmware_guest_vmblock_enable+=YES
+  command: sysrc vmware_guest_vmxnet_enable+=YES
+  command: sysrc vmware_guest_vmhgfs_enable+=YES
+  command: sysrc vmware_guestd_enable+=YES
