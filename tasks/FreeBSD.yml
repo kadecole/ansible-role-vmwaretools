@@ -18,3 +18,7 @@
 
 - name: Enable vmware_guestd_enable in rc.conf
   command: sysrc vmware_guestd_enable+=YES
+
+- service:
+    name: vmware_guestd
+    enabled: yes
